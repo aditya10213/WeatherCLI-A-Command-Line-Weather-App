@@ -4,7 +4,13 @@ import requests
 from utils import format_weather
 
 API_URL = "https://api.open-meteo.com/v1/forecast"
-
+CITY_COORDS = {
+    "delhi": (28.7041, 77.1025),
+    "mumbai": (19.0760, 72.8777),
+    "bangalore": (12.9716, 77.5946)
+}
+def get_city_coords(city):
+    return CITY_COORDS.get(city, CITY_COORDS["delhi"])
 def get_weather(city):
     params = {
         "latitude": 28.7041 if city == "delhi" else 19.0760,
