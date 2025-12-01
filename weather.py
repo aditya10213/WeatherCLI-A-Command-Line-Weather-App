@@ -1,10 +1,12 @@
 import sys
 import requests
-
+import logging
 from utils import format_weather
 
 API_URL = "https://api.open-meteo.com/v1/forecast"
 
+def main():
+    logging.info("WeatherCLI started")
 def get_weather(city):
     params = {
         "latitude": 28.7041 if city == "delhi" else 19.0760,
@@ -25,4 +27,5 @@ def main():
     print(format_weather(city, weather))
 
 main()
+logging.basicConfig(level=logging.INFO)
 
