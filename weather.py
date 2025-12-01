@@ -25,4 +25,5 @@ def main():
     print(format_weather(city, weather))
 
 main()
-
+# Fix: API returned 'temperature_2m' instead of 'temperature'
+temp = weather.get("temperature") or weather.get("temperature_2m")
