@@ -25,4 +25,8 @@ def main():
     print(format_weather(city, weather))
 
 main()
+if len(sys.argv) < 2:
+    print("City name missing. Example:")
+    print("python weather.py delhi")
+    return
 
